@@ -37,7 +37,7 @@ class PostResponse(PostBase):
     created_at: datetime
     owner_id: int
     owner: UserResponse
-    
+
     class Config:
         orm_mode = True
 
@@ -49,4 +49,3 @@ class Token(BaseModel):
 
 class TokenData(BaseModel):
     id: Optional[str] = None
-    

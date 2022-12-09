@@ -14,6 +14,6 @@ app.include_router(user.router)
 app.include_router(auth.router)
 
 
-@app.get('/')
+@app.get("/")
 def home():
-    return {'data': 'home'}
+    return {"data": "home"}
