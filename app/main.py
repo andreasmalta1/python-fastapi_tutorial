@@ -1,6 +1,10 @@
 from fastapi import FastAPI
-from routers import post, user, auth, vote
 from fastapi.middleware.cors import CORSMiddleware
+
+try:
+    from app.routers import post, user, auth, vote
+except ImportError:
+    from routers import post, user, auth, vote
 
 app = FastAPI()
 
