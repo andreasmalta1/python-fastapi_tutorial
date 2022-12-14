@@ -3,10 +3,16 @@ from sqlalchemy.orm import Session
 from sqlalchemy import func
 from typing import List, Optional
 
-import models
-import schemas
-import oauth2
-from database import get_db
+try:
+    from app.database import get_db
+    import app.schemas as schemas
+    import app.models as models
+    import app.oauth2 as oauth2
+except ImportError:
+    from database import get_db
+    import schemas
+    import models
+    import oauth2
 
 router = APIRouter(prefix="/posts", tags=["Posts"])
 
